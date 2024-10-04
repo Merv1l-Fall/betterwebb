@@ -7,10 +7,12 @@ header{
 
 .header-logo > img{
 	max-height: 6em;
+	max-width: 100%;
 }
 
 .header-logo{
  margin: 1em;
+ margin-left: 2em;
 }
 
 .header-links{
@@ -60,5 +62,11 @@ header{
 	.header-nav > a{
 		margin-top: 0.1em;
 		margin-bottom: 0.2em;
+	}
+	.header-logo > img{
+		flex-shrink: 1;
+	}
+	.header-logo{
+		margin: 0;
 	}
 }
