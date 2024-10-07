@@ -55,7 +55,7 @@ main > *, .home-links > a{
 	text-decoration: none;
 	font-size: 22px;
 	font-weight: bold;
-	margin: 0;
+	padding-left: 0;
 }
 
 .home-links > a:hover, .home-links > a:focus{
