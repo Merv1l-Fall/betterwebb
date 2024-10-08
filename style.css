@@ -4,4 +4,6 @@
 
 body{
 	margin: 0;
+	background-image: url(images/orange-light.jpg);
+	backdrop-filter: blur(10px);
 }
