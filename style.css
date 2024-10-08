@@ -6,4 +6,7 @@ body{
 	margin: 0;
 	background-image: url(images/orange-light.jpg);
 	backdrop-filter: blur(10px);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
+
