@@ -1,0 +1,81 @@
+
+
+/* Variables */
+:root{
+	--bar-width: 4rem;
+	--bar-height: 0.4rem;
+	--hamburger-gap: 0.3rem;
+	--hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+	--background: #E6E8E6;
+	--animation-time: 200ms ease-in-out;
+}
+
+.hamburger-menu
+{
+	/* variable */
+	--x-width: calc(var(--hamburger-height) * 1.41424356237);
+	/* normal code */
+	display: flex;
+	flex-direction: column;
+	gap: var(--hamburger-gap);
+	width: max-content;
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	z-index: 3;
+	opacity: 0;
+}
+.hamburger-menu::before, .hamburger-menu::after, .hamburger-menu input{
+	content: "";
+	width: var(--bar-width);
+	height: var(--bar-height);
+	background-color: var(--background);
+	border-radius: 9999px;
+	transition: opacity var(--animation-time), width var(--animation-time), rotate var(--animation-time), translate var(--animation-time), background-color var(--animation-time), display var(--animation-time);
+	transform-origin: left center;
+}
+
+.hamburger-menu input{
+	appearance: none;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before{
+	rotate: 45deg;
+	width: var(--x-width);
+	translate: 0 calc(var(--bar-height) / -2);
+}
+.hamburger-menu:has(input:checked)::after{
+	rotate: -45deg;
+	width: var(--x-width);
+	translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked{
+	width: 0;
+	opacity: 0;
+}
+
+
+.hamburger-menu:has(input:checked) + .header-nav{
+	/* transform: translateX(0%); */
+	display: flex;
+	opacity: 1;
+}
+@media(max-width: 490px){
+	.header-nav, .header-logo-container{
+		display: none;
+	}
+	.hamburger-menu{
+		opacity: 1;
+	}
+	.header-nav{
+		transition: display 300ms ease-in-out, opacity 300ms ease-in-out;
+		background-color: #1f1f1f;
+		margin-top: 3em;
+		opacity: 0;
+	}
+}
