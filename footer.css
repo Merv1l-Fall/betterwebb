@@ -127,24 +127,3 @@ footer{
 		margin: 0;
 	}
 }
-
-@media(max-width: 269px){
-	.social-icons{
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-	}
-
-	.footer-links-container{
-		margin: 1rem;
-	}
-
-	.footer-h4{
-		text-align: left;
-		margin: 1rem;
-	}
-
-	.footer-logo-container{
-		flex-direction: column;
-		padding-top: 1em;
-	}
-}
