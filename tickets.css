@@ -1,0 +1,11 @@
+main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1em;
+}
+
+.tickets-top-container{
+	color: var(--orange1);
+	font-family: "Oswald", sans-serif;
+}
