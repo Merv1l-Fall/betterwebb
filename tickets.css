@@ -1,54 +1,113 @@
-main{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.tickets-top-container {
+  color: var(--orange1);
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.tickets-top-container > h1 {
+  margin-bottom: 0;
+}
+
+.tickets-top-container > p {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.form-container {
+  max-width: 50em;
+  background-color: var(--gray2);
+  border-radius: 0.5em;
+  border: 1px solid #e6e8e6;
+  box-shadow: 0em 0em 0.5em -0.1em #e6e8e6;
+  margin: 2em;
+}
+
+form{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+}
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+}
+
+#country-select{
 	margin-top: 1em;
 }
 
-.tickets-top-container{
-	color: var(--orange1);
-	font-family: "Oswald", sans-serif;
+form label, p, h2{
+  color: var(--white1);
+  font-family: "Oswald", sans-serif;
+  margin: 0.1em;
+}
+
+form > input {
+  margin-bottom: 0.8em;
+}
+
+form > input[type="text"] {
+  max-height: 2em;
+  padding: 0.2em 1em;
+  width: 100%;
+  border: none;
+  border-radius: 0.5em;
+  background-color: var(--white1);
+}
+
+.phone-text{
 	text-align: center;
 }
 
-.tickets-top-container > h1{
-	margin-bottom: 0;
-   }
-   
-   .tickets-top-container > p{
-	   font-size: 20px;
-	   margin-top: 0;
-   }
+.number{
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+}
 
-   .form-container{
-	max-width: 35em;
-	background-color: var(--gray2);
-	border-radius: 0.5em;
-	border: 1px solid #E6E8E6;
-	box-shadow: 0em 0em 0.5em -0.1em #E6E8E6;
-	margin: 2em;
-   }
+#phone-tickets:checked ~ .number{
+	opacity: 1;
+	max-height: fit-content;
+}
 
-   form{
+.days-and-food{
 	display: flex;
 	flex-direction: column;
-	margin: 1em;
-   }
+	margin: 2em;
+}
 
-   form > label{
-	color: var(--white1);
-	font-family: "Oswald", sans-serif;
-   }
+.day-container{
+	display: flex;
+	justify-content: space-between;
+	max-width: 25em;
+}
 
-   form > input{
-	margin-bottom: 0.8em;
-   }
+.day-container label{
+	max-width: 8.6em;
+	flex-grow: 1;
+}
 
-   form > input[type=text]{
-	height: 2em;
-	padding: 0.2em 1em;
-	width: 100%;
-	border: none;
-	border-radius: 0.5em;
-	background-color: var(--white1);
-   }
+#food-day1, .food-label1, #food-day2, .food-label2, #food-day3, .food-label3{
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+#day1:checked ~ #food-day1, #day1:checked ~ .food-label1{
+	opacity: 1;
+}
+#day2:checked ~ #food-day2, #day2:checked ~ .food-label2{
+	opacity: 1;
+}
+#day3:checked ~ #food-day3, #day3:checked ~ .food-label3{
+	opacity: 1;
+}
+
