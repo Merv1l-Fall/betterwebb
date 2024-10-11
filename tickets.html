@@ -63,6 +63,7 @@
 					<input type="text" name="city" id="city-input" required>
 
 					<select name="country" id="country-select">
+						<option value="Sweden">Sweden</option>
 						<option value="United States">United States</option>
 						<option value="Afghanistan">Afghanistan</option>
 						<option value="Albania">Albania</option>
@@ -305,7 +306,7 @@
 					</select>
 				</fieldset>
 				<fieldset class="days-and-food">
-					<p>What days are you planning to attend?</p>
+					<h2>What days are you attending?</h2>
 					<div class="day-container">
 						<label for="day1"> Day 1 - 18th of October</label>
 						<input type="checkbox" id="day1" name="day1-box">
@@ -328,6 +329,45 @@
 
 						<label class="food-label3" for="food-day3">Do you want food?</label>
 						<input type="checkbox" id="food-day3" name="food-day3-box">
+					</div>
+
+					<div class="food-options1">
+						<h4> Meat, fish or vegan on day 1?</h4>
+						<label for="meat">Meat</label>
+						<input type="radio" name="food-type" id="meat">
+
+						<label for="fish">Fish</label>
+						<input type="radio" name="food-type" id="fish">
+						
+						<label for="vegan">Vegan</label>
+						<input type="radio" name="food-type" id="vegan">
+					</div>
+					<div class="food-options2">
+						<h4> Meat, fish or vegan on day 2?</h4>
+						<label for="meat">Meat</label>
+						<input type="radio" name="food-type2" id="meat">
+
+						<label for="fish">Fish</label>
+						<input type="radio" name="food-type2" id="fish">
+						
+						<label for="vegan">Vegan</label>
+						<input type="radio" name="food-type2" id="vegan">
+					</div>
+					<div class="food-options3">
+						<h4> Meat, fish or vegan on day 3?</h4>
+						<label for="meat">Meat</label>
+						<input type="radio" name="food-type3" id="meat">
+
+						<label for="fish">Fish</label>
+						<input type="radio" name="food-type3" id="fish">
+						
+						<label for="vegan">Vegan</label>
+						<input type="radio" name="food-type3" id="vegan">
+					</div>
+
+					<div class="allergies">
+						<label for="allergies-input">Are you allergic to something?</label>
+						<input type="text" name="allergies" id="allergies-input">
 					</div>
 				</fieldset>
 			</form>

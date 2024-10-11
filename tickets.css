@@ -32,6 +32,7 @@ main {
 form{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	/* grid-template-rows: 1fr 1fr; */
 
 }
 .personal-info {
@@ -44,23 +45,35 @@ form{
 	margin-top: 1em;
 }
 
-form label, p, h2{
+form label, form p, form h2,form h4{
   color: var(--white1);
   font-family: "Oswald", sans-serif;
   margin: 0.1em;
+}
+
+form h4, .allergies{
+	margin-top: 1em;
 }
 
 form > input {
   margin-bottom: 0.8em;
 }
 
-form > input[type="text"] {
-  max-height: 2em;
-  padding: 0.2em 1em;
+input[type="text"], input[type="email"], input[type="tel"], select{
+  /* max-height: 2em; */
+  padding: 0.6em;
   width: 100%;
-  border: none;
+  border: 1px solid var(--gray1);
   border-radius: 0.5em;
   background-color: var(--white1);
+}
+
+input[type="checkbox"]{
+	width: 1em;
+}
+
+#phone-tickets{
+	width: 100%;
 }
 
 .phone-text{
@@ -96,18 +109,44 @@ form > input[type="text"] {
 	flex-grow: 1;
 }
 
+#food-day1:checked ~ #day1{
+	
+}
+
 #food-day1, .food-label1, #food-day2, .food-label2, #food-day3, .food-label3{
 	opacity: 0;
+	pointer-events: none;
 	transition: opacity 0.5s;
 }
 
 #day1:checked ~ #food-day1, #day1:checked ~ .food-label1{
 	opacity: 1;
+	pointer-events: auto;
 }
 #day2:checked ~ #food-day2, #day2:checked ~ .food-label2{
 	opacity: 1;
+	pointer-events: auto;
 }
 #day3:checked ~ #food-day3, #day3:checked ~ .food-label3{
 	opacity: 1;
+	pointer-events: auto;
 }
+.food-options1, .food-options2, .food-options3, .allergies{
+opacity: 0;
+height: 0;
+transition: opacity 0.5s ease-in-out;
+}
+.day-container:has(#food-day1:checked) ~ .food-options1, .day-container:has(#food-day1:checked) ~ .allergies {
+	opacity: 1;
+	height:	auto;
 
+}
+.day-container:has(#food-day2:checked) ~ .food-options2, .day-container:has(#food-day2:checked) ~ .allergies {
+	opacity: 1;
+	height:	auto;
+
+}
+.day-container:has(#food-day3:checked) ~ .food-options3, .day-container:has(#food-day3:checked) ~ .allergies {
+	opacity: 1;
+	height:	auto;
+}
