@@ -14,11 +14,32 @@ main > *, .home-links > a{
 .home-top-container{
 	color: #F15025;
 	text-align: center;
+	background-color: var(--gray1);
+	border: 1px solid #E6E8E6;
+	box-shadow: 0em 0em 0.5em -0.1em #E6E8E6;
+	border-radius: 1em;
+	margin: 0.5em;
+}
+
+.home-top-container > p{
+	margin-top: 0;
+}
+
+.home-top-container > h1{
+	margin-bottom: 0;
 }
 
 .home-paragraph1, .home-paragraph2{
 	display: flex;
 	flex-direction: column;
+	background-color: var(--gray1);
+	border: 1px solid #E6E8E6;
+	box-shadow: 0em 0em 0.5em -0.1em #E6E8E6;
+	margin: 0.5em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	border-radius: 1em;
+	padding: 1.2rem;
 }
 .home-paragraph1 > *, .home-paragraph2 > *{
 	max-width: 35em;
@@ -37,9 +58,13 @@ main > *, .home-links > a{
 }
 
 .conference-image > img{
-	max-height: 25em;
+	max-height: 21.3em;
 	max-width: 100%;
 	flex-grow: 1;
+	border-radius: 1em;
+	border: 1px solid #E6E8E6;
+	box-shadow: 0em 0em 0.5em -0.1em #E6E8E6;
+	border-radius: 1em;
 }
 
 .home-paragraph2{
@@ -57,6 +82,7 @@ main > *, .home-links > a{
 
 .home-links > a:hover, .home-links > a:focus{
 	color: #F15025;
+	transition: color 0.5s;
 }
 
 .home-links{
