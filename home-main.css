@@ -41,9 +41,11 @@ main > *, .home-links > a{
 	margin-bottom: 2em;
 	border-radius: 1em;
 	padding: 1.2rem;
-}
-.home-paragraph1 > *, .home-paragraph2 > *{
 	max-width: 35em;
+}
+
+.home-paragraph1 > p, .home-paragraph2 > p{
+	font-size: large;
 }
 
 .home-paragraph2 > p{
@@ -59,7 +61,7 @@ main > *, .home-links > a{
 }
 
 .conference-image > img{
-	max-height: 21.3em;
+	max-height: 19.8em;
 	max-width: 100%;
 	flex-grow: 1;
 	border-radius: 1em;
