@@ -1,16 +1,15 @@
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1em;
 }
 
-
 .tickets-top-container {
-    color: var(--orange1);
-    font-family: "Oswald", sans-serif;
-    text-align: center;
- 	background-color: var(--gray1);
+	color: var(--orange1);
+	font-family: "Oswald", sans-serif;
+	text-align: center;
+	background-color: var(--gray1);
 	border: 1px solid var(--white1);
 	box-shadow: 0em 0em 0.5em -0.1em var(--white1);
 	border-radius: 1em;
@@ -21,103 +20,113 @@ main {
 }
 
 .tickets-top-container > h1 {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .tickets-top-container > p {
-  font-size: 20px;
-  margin-top: 0;
+	font-size: 20px;
+	margin-top: 0;
 }
 
 .form-container {
-  max-width: 50em;
-  background-color: var(--gray2);
-  border-radius: 0.5em;
-  border: 1px solid var(--white1);
-  box-shadow: 0em 0em 0.5em -0.1em var(--white1);
-  margin: 2em;
-  margin-bottom: 7em;
+	max-width: 50em;
+	background-color: var(--gray2);
+	border-radius: 0.5em;
+	border: 1px solid var(--white1);
+	box-shadow: 0em 0em 0.5em -0.1em var(--white1);
+	margin: 2em;
+	margin-bottom: 7em;
 }
 
-form{
+form {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
-.personal-info, .days-and-food{
-  display: flex;
-  flex-direction: column;
-  margin: 2em;
-  border: 0;
+.personal-info,
+.days-and-food {
+	display: flex;
+	flex-direction: column;
+	margin: 2em;
+	border: 0;
 }
 
-#country-select{
+#country-select {
 	margin-top: 1em;
 }
 
-form label, form p, form h2,form h4{
-  color: var(--white1);
-  font-family: "Oswald", sans-serif;
-  margin: 0.1em;
+form label,
+form p,
+form h2,
+form h4 {
+	color: var(--white1);
+	font-family: "Oswald", sans-serif;
+	margin: 0.1em;
 }
 
-form h4, .allergies{
+form h4,
+.allergies {
 	margin-top: 1em;
 }
 
 form > input {
-  margin-bottom: 0.8em;
+	margin-bottom: 0.8em;
 }
 
-form input:invalid{
+form input:invalid {
 	border: 1px solid red;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="postal"], input[type="street-address"], select{
-  padding: 0.6em;
-  width: 100%;
-  border: 1px solid var(--gray1);
-  border-radius: 0.5em;
-  background-color: var(--white1);
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="postal"],
+input[type="street-address"],
+select {
+	padding: 0.6em;
+	width: 100%;
+	border: 1px solid var(--gray1);
+	border-radius: 0.5em;
+	background-color: var(--white1);
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
 	width: 1em;
 }
 
-#phone-tickets{
+#phone-tickets {
 	width: 100%;
 }
 
-.phone-text{
+.phone-text {
 	text-align: center;
 }
 
-.number{
+.number {
 	opacity: 0;
 	visibility: hidden;
 	max-height: 0;
 	overflow: hidden;
-	transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
 
-#phone-tickets:checked ~ .number{
+#phone-tickets:checked ~ .number {
 	opacity: 1;
-	max-height: fit-content;
+	max-height: 4em;
 	visibility: visible;
 }
 
-.day-container{
+.day-container {
 	display: flex;
 	justify-content: space-between;
 	max-width: 25em;
 }
 
-.day-container label{
+.day-container label {
 	max-width: 8.6em;
 	flex-grow: 1;
 }
 
-.form-buttons{
+.form-buttons {
 	display: flex;
 	gap: 1em;
 	align-items: center;
@@ -125,7 +134,7 @@ input[type="checkbox"]{
 	margin-left: 1.9rem;
 }
 
-.form-buttons > button{
+.form-buttons > button {
 	padding: 0.5rem;
 	border-radius: 0.5rem;
 	max-width: 9em;
@@ -139,88 +148,102 @@ input[type="checkbox"]{
 	transition: scale 0.5s;
 }
 
-.form-buttons > button:hover{
+.form-buttons > button:hover {
 	scale: 1.05;
 	cursor: pointer;
 }
 
-#order-button{
+#order-button {
 	background-color: var(--orange1);
 	box-shadow: 0em 0em 0.5em var(--white1), 0.3em 0.3em 0.2em;
 }
 
-#food-day1, .food-label1, #food-day2, .food-label2, #food-day3, .food-label3{
+#food-day1,
+.food-label1,
+#food-day2,
+.food-label2,
+#food-day3,
+.food-label3 {
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.5s;
 	visibility: hidden;
-	
 }
 
-#day1:checked ~ #food-day1, #day1:checked ~ .food-label1{
+#day1:checked ~ #food-day1,
+#day1:checked ~ .food-label1 {
 	opacity: 1;
 	pointer-events: auto;
 	visibility: visible;
 }
-#day2:checked ~ #food-day2, #day2:checked ~ .food-label2{
+#day2:checked ~ #food-day2,
+#day2:checked ~ .food-label2 {
 	opacity: 1;
 	pointer-events: auto;
 	visibility: visible;
 }
-#day3:checked ~ #food-day3, #day3:checked ~ .food-label3{
+#day3:checked ~ #food-day3,
+#day3:checked ~ .food-label3 {
 	opacity: 1;
 	pointer-events: auto;
 	visibility: visible;
 }
-.food-options1, .food-options2, .food-options3, .allergies{
-opacity: 0;
-height: 0;
-transition: opacity 0.5s ease-in-out;
-visibility: hidden;
+.food-options1,
+.food-options2,
+.food-options3,
+.allergies {
+	opacity: 0;
+	max-height: 0;
+	transition: opacity 0.5s ease-in-out;
+	visibility: hidden;
+	transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
-.day-container:has(#food-day1:checked) ~ .food-options1, .day-container:has(#food-day1:checked) ~ .allergies {
+.day-container:has(#food-day1:checked) ~ .food-options1,
+.day-container:has(#food-day1:checked) ~ .allergies {
 	opacity: 1;
-	height:	auto;
+	max-height: 4em;
 	visibility: visible;
+}
+.day-container:has(#food-day2:checked) ~ .food-options2,
+.day-container:has(#food-day2:checked) ~ .allergies {
+	opacity: 1;
+	max-height: 4em;
+	visibility: visible;
+}
+.day-container:has(#food-day3:checked) ~ .food-options3,
+.day-container:has(#food-day3:checked) ~ .allergies {
+	opacity: 1;
+	max-height: 4em;
+	visibility: visible;
+}
 
-}
-.day-container:has(#food-day2:checked) ~ .food-options2, .day-container:has(#food-day2:checked) ~ .allergies {
-	opacity: 1;
-	height:	auto;
-	visibility: visible;
-}
-.day-container:has(#food-day3:checked) ~ .food-options3, .day-container:has(#food-day3:checked) ~ .allergies {
-	opacity: 1;
-	height:	auto;
-	visibility: visible;
-}
-
-@media(max-width: 800px){
-	form{
+@media (max-width: 800px) {
+	form {
 		grid-template-columns: 1fr;
 		grid-template-rows: auto auto;
 	}
-	.personal-info{
+	.personal-info {
 		max-height: 36.5em;
 	}
 }
 
-@media(max-width: 490px){
-	.form-container{
-		margin:	0.5em;
+@media (max-width: 490px) {
+	.form-container {
+		margin: 0.5em;
 	}
 
-	.personal-info, .days-and-food{
+	.personal-info,
+	.days-and-food {
 		margin: 0.4em;
 	}
 
-	.form-buttons{
+	.form-buttons {
 		margin: 0.4rem;
 		gap: 0.4rem;
 		justify-content: center;
 	}
 
-	.form-buttons > button{
+	.form-buttons > button {
 		max-width: 11em;
 	}
 }
