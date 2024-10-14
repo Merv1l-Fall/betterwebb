@@ -1,6 +1,6 @@
 
 
-/* Variables */
+/* Variables for hamburger */
 :root{
 	--bar-width: 4rem;
 	--bar-height: 0.4rem;
@@ -11,7 +11,7 @@
 
 .hamburger-menu
 {
-	/* variable */
+	/* variable to calcualte width of hamburger */
 	--x-width: calc(var(--hamburger-height) * 1.41424356237);
 	/* normal code */
 	display: flex;
@@ -63,6 +63,7 @@
 	display: flex;
 	opacity: 1;
 	max-height: 40em;
+	visibility: visible;
 }
 
 .hamburger-menu:has(input:focus-visible)::before, .hamburger-menu:has(input:focus-visible)::after, #menu-toggle:focus-visible{
@@ -86,5 +87,6 @@
 		margin-top: 3em;
 		opacity: 0;
 		max-height: 1em;
+		visibility: hidden;
 	}
 }
