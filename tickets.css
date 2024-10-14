@@ -27,13 +27,12 @@ main {
   border: 1px solid #e6e8e6;
   box-shadow: 0em 0em 0.5em -0.1em #e6e8e6;
   margin: 2em;
+  margin-bottom: 7em;
 }
 
 form{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	/* grid-template-rows: 1fr 1fr; */
-
 }
 .personal-info {
   display: flex;
@@ -57,6 +56,10 @@ form h4, .allergies{
 
 form > input {
   margin-bottom: 0.8em;
+}
+
+form input:invalid{
+	border: 1px solid red;
 }
 
 input[type="text"], input[type="email"], input[type="tel"], input[type="postal"], input[type="street-address"], select{
@@ -108,44 +111,110 @@ input[type="checkbox"]{
 	flex-grow: 1;
 }
 
-#food-day1:checked ~ #day1{
-	
+.form-buttons{
+	display: flex;
+	gap: 1em;
+	align-items: center;
+	margin-bottom: 2rem;
+	margin-left: 1.9rem;
+}
+
+.form-buttons > button{
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	max-width: 9em;
+	flex-grow: 1;
+	background-color: var(--white1);
+	border: 1px solid var(--gray1);
+	box-shadow: 0.2em 0.2em;
+	font-family: "Oswald", sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	transition: scale 0.5s;
+}
+
+.form-buttons > button:hover{
+	scale: 1.05;
+	cursor: pointer;
+}
+
+#order-button{
+	background-color: var(--orange1);
+	box-shadow: 0em 0em 0.5em var(--white1), 0.3em 0.3em 0.2em;
 }
 
 #food-day1, .food-label1, #food-day2, .food-label2, #food-day3, .food-label3{
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.5s;
+	visibility: hidden;
+	
 }
 
 #day1:checked ~ #food-day1, #day1:checked ~ .food-label1{
 	opacity: 1;
 	pointer-events: auto;
+	visibility: visible;
 }
 #day2:checked ~ #food-day2, #day2:checked ~ .food-label2{
 	opacity: 1;
 	pointer-events: auto;
+	visibility: visible;
 }
 #day3:checked ~ #food-day3, #day3:checked ~ .food-label3{
 	opacity: 1;
 	pointer-events: auto;
+	visibility: visible;
 }
 .food-options1, .food-options2, .food-options3, .allergies{
 opacity: 0;
 height: 0;
 transition: opacity 0.5s ease-in-out;
+visibility: hidden;
 }
 .day-container:has(#food-day1:checked) ~ .food-options1, .day-container:has(#food-day1:checked) ~ .allergies {
 	opacity: 1;
 	height:	auto;
+	visibility: visible;
 
 }
 .day-container:has(#food-day2:checked) ~ .food-options2, .day-container:has(#food-day2:checked) ~ .allergies {
 	opacity: 1;
 	height:	auto;
-
+	visibility: visible;
 }
 .day-container:has(#food-day3:checked) ~ .food-options3, .day-container:has(#food-day3:checked) ~ .allergies {
 	opacity: 1;
 	height:	auto;
+	visibility: visible;
+}
+
+@media(max-width: 800px){
+	form{
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+	}
+	.personal-info{
+		max-height: 36.5em;
+	}
+}
+
+@media(max-width: 490px){
+	.form-container{
+		margin:	0.5em;
+	}
+
+	.personal-info, .days-and-food{
+		margin: 0.4em;
+	}
+
+	.form-buttons{
+		margin: 0.4rem;
+		gap: 0.4rem;
+		justify-content: center;
+	}
+
+	.form-buttons > button{
+		max-width: 11em;
+	}
 }
