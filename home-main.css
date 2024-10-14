@@ -19,6 +19,7 @@ main > *, .home-links > a{
 	box-shadow: 0em 0em 0.5em -0.1em var(--white1);
 	border-radius: 1em;
 	margin: 0.5em;
+	margin-top: 3em;
 }
 
 .home-top-container > p{
