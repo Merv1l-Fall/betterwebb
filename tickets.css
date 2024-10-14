@@ -5,6 +5,7 @@ main {
   margin-top: 1em;
 }
 
+
 .tickets-top-container {
     color: var(--orange1);
     font-family: "Oswald", sans-serif;
@@ -42,10 +43,11 @@ form{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
-.personal-info {
+.personal-info, .days-and-food{
   display: flex;
   flex-direction: column;
   margin: 2em;
+  border: 0;
 }
 
 #country-select{
@@ -102,12 +104,6 @@ input[type="checkbox"]{
 	opacity: 1;
 	max-height: fit-content;
 	visibility: visible;
-}
-
-.days-and-food{
-	display: flex;
-	flex-direction: column;
-	margin: 2em;
 }
 
 .day-container{
