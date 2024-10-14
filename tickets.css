@@ -6,9 +6,15 @@ main {
 }
 
 .tickets-top-container {
-  color: var(--orange1);
-  font-family: "Oswald", sans-serif;
-  text-align: center;
+    color: var(--orange1);
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+ 	background-color: var(--gray1);
+	border: 1px solid var(--white1);
+	box-shadow: 0em 0em 0.5em -0.1em var(--white1);
+	border-radius: 1em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
 }
 
 .tickets-top-container > h1 {
@@ -24,8 +30,8 @@ main {
   max-width: 50em;
   background-color: var(--gray2);
   border-radius: 0.5em;
-  border: 1px solid #e6e8e6;
-  box-shadow: 0em 0em 0.5em -0.1em #e6e8e6;
+  border: 1px solid var(--white1);
+  box-shadow: 0em 0em 0.5em -0.1em var(--white1);
   margin: 2em;
   margin-bottom: 7em;
 }
