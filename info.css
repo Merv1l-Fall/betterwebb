@@ -38,7 +38,7 @@ main > *{
 
 .event-address > a{
 	color: var(--white1);
-	text-decoration: none;
+
 	transition: color 0.5s;
 }
 .event-address > a:hover{
