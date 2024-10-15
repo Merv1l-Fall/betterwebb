@@ -117,13 +117,25 @@ input[type="checkbox"] {
 
 .day-container {
 	display: flex;
-	justify-content: space-between;
 	max-width: 25em;
+	margin-bottom: 0.5em;
 }
 
+.food-label1,
+.food-label2,
+.food-label3 {
+	padding-left: 1.9em;
+}
+
+.input-container1,
+.input-container2,
+.input-container3 {
+	display: flex;
+}
 .day-container label {
-	max-width: 8.6em;
+	width: 8.6em;
 	flex-grow: 1;
+	margin: 0;
 }
 
 .form-buttons {
@@ -145,7 +157,7 @@ input[type="checkbox"] {
 	font-family: "Oswald", sans-serif;
 	font-size: 16px;
 	font-weight: bold;
-	transition: scale 0.5s;
+	transition: scale 0.5s ease-in-out;
 }
 
 .form-buttons > button:hover {
@@ -158,36 +170,36 @@ input[type="checkbox"] {
 	box-shadow: 0em 0em 0.5em var(--white1), 0.3em 0.3em 0.2em;
 }
 
-#food-day1,
-.food-label1,
-#food-day2,
-.food-label2,
-#food-day3,
-.food-label3 {
+.food-input-container1,
+.food-input-container2,
+.food-input-container3 {
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.5s;
+	transition: opacity 0.5s ease-in-out;
 	visibility: hidden;
+	display: flex;
+	gap: 0.5em;
 }
 
-#day1:checked ~ #food-day1,
-#day1:checked ~ .food-label1 {
+.input-container1:has(#day1:checked) + .food-input-container1 {
 	opacity: 1;
-	pointer-events: auto;
 	visibility: visible;
+	max-height: fit-content;
+	pointer-events: auto;
 }
-#day2:checked ~ #food-day2,
-#day2:checked ~ .food-label2 {
+.input-container2:has(#day2:checked) + .food-input-container2 {
 	opacity: 1;
-	pointer-events: auto;
 	visibility: visible;
+	max-height: fit-content;
+	pointer-events: auto;
 }
-#day3:checked ~ #food-day3,
-#day3:checked ~ .food-label3 {
+.input-container3:has(#day3:checked) + .food-input-container3 {
 	opacity: 1;
-	pointer-events: auto;
 	visibility: visible;
+	max-height: fit-content;
+	pointer-events: auto;
 }
+
 .food-options1,
 .food-options2,
 .food-options3,
@@ -198,6 +210,7 @@ input[type="checkbox"] {
 	visibility: hidden;
 	transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
+
 .day-container:has(#food-day1:checked) ~ .food-options1,
 .day-container:has(#food-day1:checked) ~ .allergies {
 	opacity: 1;
@@ -217,6 +230,7 @@ input[type="checkbox"] {
 	visibility: visible;
 }
 
+/* Media Queries */
 @media (max-width: 800px) {
 	form {
 		grid-template-columns: 1fr;
@@ -245,5 +259,14 @@ input[type="checkbox"] {
 
 	.form-buttons > button {
 		max-width: 11em;
+	}
+
+	.day-container {
+		flex-direction: column;
+	}
+	.food-label1,
+	.food-label2,
+	.food-label3 {
+		padding-left: 0em;
 	}
 }

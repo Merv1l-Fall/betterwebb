@@ -28,6 +28,7 @@ main{
 .schedule-top-container > p{
 	font-size: 20px;
 	margin-top: 0;
+	font-style: italic;
 }
 
 .schedule-paragraph{
@@ -88,7 +89,7 @@ main{
 }
 
 .event-text-container > *{
-	margin: 1.5em;
+	margin: 1.5rem;
 }
 
 .time{

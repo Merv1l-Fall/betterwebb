@@ -2,7 +2,6 @@ header{
 	background-color: var(--gray1);
 	display: flex;
 	justify-content: center;
-	/* flex-wrap: wrap; */
 }
 
 .header-logo > img{
