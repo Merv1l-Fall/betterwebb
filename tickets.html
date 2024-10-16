@@ -51,13 +51,13 @@
 	
 					<div class="number">
 						<label for="phone-input">Phone number with country code</label>
-						<input type="tel" name="phone" id="phone-input" autocomplete="tel">
+						<input type="tel" name="phone" id="phone-input" autocomplete="tel" pattern="[+][0-9]{5,20}">
 					</div>
 					<label for="adress-input">Adress</label>
 					<input type="text" name="adress" id="adress-input" autocomplete="address-line1" required>
 
-					<label for="postal-input">Postal code</label>
-					<input type="text" name="postal-code" id="postal-input" autocomplete="postal-code" required>
+					<label for="postal-input">Postal code (numbers only)</label>
+					<input type="text" name="postal-code" id="postal-input" autocomplete="postal-code" pattern="[0-9]{5,10}" required>
 
 					<label for="city-input">City</label>
 					<input type="text" name="city" id="city-input" required>
